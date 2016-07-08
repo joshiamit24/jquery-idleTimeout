@@ -286,6 +286,10 @@
     //----------- LOGOUT USER FUNCTION --------------//
     logoutUser = function () {
       console.log('start logoutUser');
+	    
+	    // Added 2016-07-08 By Richard Hetherington as a suggested bug fix by JillElaine for AutoLogout Infinite Loop Issue 26
+	    stopIdleTimer();
+
       store.set('idleTimerLoggedOut', true);
 
       if (currentConfig.sessionKeepAliveTimer) {
